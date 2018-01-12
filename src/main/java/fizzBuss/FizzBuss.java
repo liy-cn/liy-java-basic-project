@@ -1,3 +1,5 @@
+package fizzBuss;
+
 /**
  * Created by liyue on 2018/1/12
  */
