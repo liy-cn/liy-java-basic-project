@@ -17,20 +17,18 @@ public class EventStatusMgr {
 
 
   public void push(UUID orderId, IEvent event) {
-    if (this.orderStateMap.get(orderId) == null) {
-      Stack<IEvent> events = new Stack<IEvent>();
-      this.orderStateMap.put(orderId,events);
+    Stack<IEvent> orderEventsStack = this.orderStateMap.get(orderId);
+    if (orderEventsStack == null) {
+      orderEventsStack = new Stack<IEvent>();
+      this.orderStateMap.put(orderId,orderEventsStack);
     }
+    orderEventsStack.push(event);
 
-    Stack<IEvent> events = this.orderStateMap.get(orderId);
-    events.push(event);
-    this.orderStateMap.put(orderId,events);
   }
 
   public String judgeState(UUID orderId) {
     Stack<IEvent> events = this.orderStateMap.get(orderId);
-    IEvent event = events.peek();
-    return event.getStatus();
+    return events.peek().getStatus();
   }
 
   /**
