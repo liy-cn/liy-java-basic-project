@@ -5,7 +5,7 @@ package domain.event;
  */
 public enum EventStatusEnum {
 
-  SUBMIT("SUBMIT"),
+  SUBMITED("SUBMITED"),
   CREATED("CREATED"),
   PAID("PAID"),
   FINISHED("FINISHED"),

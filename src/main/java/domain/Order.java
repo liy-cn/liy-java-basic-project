@@ -1,7 +1,7 @@
 package domain;
 
 import domain.event.EventStatusMgr;
-import domain.event.impl.SubmitOrderEvent;
+import domain.event.impl.SubmitedOrderEvent;
 
 import java.util.Date;
 import java.util.List;
@@ -23,7 +23,7 @@ public class Order {
     this.createdDate = createdDate;
     this.orderItems = orderItems;
 
-    EventStatusMgr.getInstance().push(id,new SubmitOrderEvent());
+    EventStatusMgr.getInstance().push(id,new SubmitedOrderEvent());
 
   }
 

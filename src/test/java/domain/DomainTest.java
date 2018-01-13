@@ -30,7 +30,7 @@ public class DomainTest {
   public void order_status_change_to_submit_test() {
     Order order = new Order(new CustomerContact("liyue", "address"), new Date(), Arrays.asList(new OrderItem(1, new ProductSnapshot("sku123", 100.00))));
     String orderStatus = EventStatusMgr.getInstance().judgeState(order.getId());
-    Assert.assertEquals(EventStatusEnum.SUBMIT.getTitle(), orderStatus);
+    Assert.assertEquals(EventStatusEnum.SUBMITED.getTitle(), orderStatus);
   }
 
   @Test
